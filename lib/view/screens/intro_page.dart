@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-import 'package:news_app/presentation/home_page.dart';
+import 'package:news_app/view/screens/home_page.dart';
 import 'package:sizer/sizer.dart';
 
-class intro_page extends StatefulWidget {
-  const intro_page({Key? key}) : super(key: key);
+class IntroPage extends StatefulWidget {
+  const IntroPage({Key? key}) : super(key: key);
 
   @override
-  State<intro_page> createState() => _intro_pageState();
+  State<IntroPage> createState() => _IntroPageState();
 }
 
-class _intro_pageState extends State<intro_page> {
+class _IntroPageState extends State<IntroPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-      child: Container(
+      child: SizedBox(
         width: 100.w,
         height: 100.h,
         child: Column(
@@ -45,16 +45,16 @@ class _intro_pageState extends State<intro_page> {
               ],
             ),
             SizedBox(
-              height: 7.h,
+              height: 4.h,
             ),
-            Container(
+            SizedBox(
               width: 99.w,
               height: 45.h,
               child: Lottie.network(
                   "https://lottie.host/6bfe1eb2-7ba7-4786-9353-7ceab04c1769/uQkk0SxPmA.json"),
             ),
             SizedBox(
-              height: 5.h,
+              height: 3.h,
             ),
             Text(
               "News from around the world",
@@ -72,7 +72,7 @@ class _intro_pageState extends State<intro_page> {
             ),
             MaterialButton(
               onPressed: () {
-                Get.offAll(() => home_page());
+                Get.offAll(() => const HomePage());
               },
               child: Container(
                 decoration: BoxDecoration(
